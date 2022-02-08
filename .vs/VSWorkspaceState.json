@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\schnitt-table"
   ],
+  "SelectedNode": "\\src\\app\\schnitt.service.spec.ts",
   "PreviewInSolutionExplorer": false
 }
