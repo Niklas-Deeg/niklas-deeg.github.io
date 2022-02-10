@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <a mat-button routerLink="/"><h1>Niklas Web App</h1></a>
+    <span class="menu-spacer"></span>
+    <div>
+      <!--<a mat-button routerLink="/">Dashboard</a>-->
+
+      <button mat-button [matMenuTriggerFor]="kegelMenu">Kegeln</button>
+      <mat-menu #kegelMenu="matMenu" yPosition="below">
+        <a mat-button routerLink="/Schnitt"> Schnittliste </a>
+        <button mat-menu-item>Spieltagsplanung</button>
+      </mat-menu>
+
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="little-Toolbar-Height">
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">Dashboard</a>
+      <a mat-list-item routerLink="/Schnitt"> Schnittliste </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <main class="container">
+        <router-outlet></router-outlet>   
+    </main>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

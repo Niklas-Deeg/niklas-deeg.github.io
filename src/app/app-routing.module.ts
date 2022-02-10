@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SchnittTableComponent } from './schnitt-table/schnitt-table.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'Schnitt', component: SchnittTableComponent }
+];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

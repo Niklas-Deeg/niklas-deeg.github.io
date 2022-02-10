@@ -5,6 +5,6 @@
     "\\src\\app",
     "\\src\\app\\schnitt-table"
   ],
-  "SelectedNode": "\\src\\app\\schnitt.service.spec.ts",
+  "SelectedNode": "\\src\\app\\schnitt-table\\schnitt-table.component.ts",
   "PreviewInSolutionExplorer": false
 }
