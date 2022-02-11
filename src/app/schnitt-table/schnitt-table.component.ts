@@ -23,6 +23,7 @@ export interface Spieler {
   templateUrl: './schnitt-table.component.html',
   styleUrls: ['./schnitt-table.component.css']
 })
+  //, AfterViewInit
 export class SchnittTableComponent implements OnInit {
 
   displayedColumns = ['name', 'club', 'hSpiele', 'hSchnitt', 'aSpiele', 'aSchnitt', 'gSpiele', 'gSchnitt', 'bestleistung'];
@@ -36,16 +37,15 @@ export class SchnittTableComponent implements OnInit {
   ngOnInit(): void {
     this.service.getSpielerData().subscribe((response: any) => {
       this.dataSource = new MatTableDataSource(response);
-      //this.dataSource.sort = this.sort;
-      //console.log('response is ', response);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
     });
-    //this.dataSource.sort = this.sort;
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  //ngAfterViewInit() {
+  //  //this.dataSource.paginator = this.paginator;
+  //  this.dataSource.sort = this.sort;
+  //}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
