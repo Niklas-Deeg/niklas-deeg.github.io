@@ -14,8 +14,11 @@
         <a mat-button routerLink="/Schnitt"> Schnittliste </a>
         <button mat-menu-item>Spieltagsplanung</button>
       </mat-menu>
-
     </div>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/Login"><i class="material-icons">login</i></button>
+
+
   </mat-toolbar-row>
 
   <mat-toolbar-row class="little-Toolbar-Height">
@@ -33,7 +36,7 @@
   <mat-sidenav-content>
 
     <main class="container">
-        <router-outlet></router-outlet>   
+      <router-outlet></router-outlet>
     </main>
 
   </mat-sidenav-content>

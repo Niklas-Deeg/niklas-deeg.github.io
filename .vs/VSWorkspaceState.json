@@ -1,13 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\docs",
     "\\src",
     "\\src\\app",
     "\\src\\app\\dashboard",
+    "\\src\\app\\login",
     "\\src\\app\\navigation",
     "\\src\\app\\navigation\\header",
-    "\\src\\app\\schnitt-table"
+    "\\src\\app\\schnitt-table",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\schnitt.service.ts",
+  "SelectedNode": "\\src\\app\\dashboard\\dashboard.component.html",
   "PreviewInSolutionExplorer": false
 }

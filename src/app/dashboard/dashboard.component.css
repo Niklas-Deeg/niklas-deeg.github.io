@@ -19,3 +19,21 @@
 .dashboard-card-content {
   text-align: center;
 }
+
+
+
+.card {
+  max-width: 400px;
+  cursor: pointer;
+  background-color: #e8eaf6;
+}
+
+.largePadding{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

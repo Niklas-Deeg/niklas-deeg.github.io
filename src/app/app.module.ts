@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatTableModule } from '@angular/material/table'
 import { MatInputModule } from '@angular/material/input';
@@ -24,13 +25,15 @@ import { MatListModule } from '@angular/material/list';
 import { SchnittTableComponent } from './schnitt-table/schnitt-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './navigation/header/header.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SchnittTableComponent,
     DashboardComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { HeaderComponent } from './navigation/header/header.component';
     MatTableModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatSortModule,
     MatGridListModule,
