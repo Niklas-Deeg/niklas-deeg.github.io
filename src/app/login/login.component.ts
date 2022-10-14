@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 //import { AuthService } from '../auth.service';
@@ -12,12 +12,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class LoginComponent implements OnInit {  
-  form: FormGroup;  
+  form: UntypedFormGroup;  
   public loginInvalid: boolean;  
   private formSubmitAttempt: boolean;  
   private returnUrl: string;
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private route: ActivatedRoute,
     private router: Router//,
     //private authService: AuthService

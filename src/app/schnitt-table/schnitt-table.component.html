@@ -22,34 +22,34 @@
         <td mat-cell *matCellDef="let element"> {{element.club}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="hSpiele">
+      <ng-container matColumnDef="hspiele">
         <th mat-header-cell *matHeaderCellDef> Heim-Sp </th>
         <td mat-cell *matCellDef="let element"> {{element.hSpiele}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="hSchnitt">
+      <ng-container matColumnDef="hschnitt">
         <!--="hSchnitt"-->
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Ø </th>
         <td mat-cell *matCellDef="let element"> {{element.hSchnitt | number: '1.0-2'}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="aSpiele">
+      <ng-container matColumnDef="aspiele">
         <th mat-header-cell *matHeaderCellDef> Auswärts-SP </th>
         <td mat-cell *matCellDef="let element"> {{element.aSpiele}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="aSchnitt">
+      <ng-container matColumnDef="aschnitt">
         <!--="aSchnitt"-->
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Ø </th>
         <td mat-cell *matCellDef="let element"> {{element.aSchnitt | number: '1.0-2'}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="gSpiele">
+      <ng-container matColumnDef="gspiele">
         <th mat-header-cell *matHeaderCellDef> Gesammt-Sp </th>
         <td mat-cell *matCellDef="let element"> {{element.gSpiele}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="gSchnitt">
+      <ng-container matColumnDef="gschnitt">
         <!--="gSchnitt"-->
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Ø </th>
         <td mat-cell *matCellDef="let element"> {{element.gSchnitt | number: '1.0-2'}} </td>
