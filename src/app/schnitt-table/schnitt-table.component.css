@@ -11,3 +11,29 @@ td {
   text-align: center;
 }
 */
+
+.border-left-mat-cell {
+  text-align: center;
+  border-left: 0.5px solid #CCC;
+  border-right: none;
+  padding: 0 !important;
+}
+
+.border-right-mat-cell {
+  text-align: center;
+  border-right: 0.5px solid #CCC;
+  padding: 0 !important;
+}
+
+.border-mat-cell {
+  text-align: center;
+  border-right: 0.5px solid #CCC;
+  border-left: 0.5px solid #CCC;
+  padding: 0 !important;
+}
+
+
+td {
+  text-align: center;
+  /*justify-content: flex-end;*/
+}
