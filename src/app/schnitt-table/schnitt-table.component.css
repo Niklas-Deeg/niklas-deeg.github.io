@@ -3,14 +3,11 @@ table {
   width: 100%;
 }
 
-/*th.mat-header-cell {
-  text-align: center;
-}
 
-td {
-  text-align: center;
+:host ::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
 }
-*/
 
 .border-left-mat-cell {
   text-align: center;
@@ -35,5 +32,4 @@ td {
 
 td {
   text-align: center;
-  /*justify-content: flex-end;*/
 }
