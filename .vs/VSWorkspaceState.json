@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\docs",
     "\\src",
     "\\src\\app",
     "\\src\\app\\dashboard",
@@ -9,7 +8,9 @@
     "\\src\\app\\navigation",
     "\\src\\app\\navigation\\header",
     "\\src\\app\\schnitt-table",
-    "\\src\\assets"
+    "\\src\\assets",
+    "\\src\\environments"
   ],
+  "SelectedNode": "\\src\\environments\\environment.ts",
   "PreviewInSolutionExplorer": false
 }

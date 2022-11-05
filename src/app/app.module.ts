@@ -26,6 +26,7 @@ import { SchnittTableComponent } from './schnitt-table/schnitt-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { LoginComponent } from './login/login.component';
+import { SpieltagsplanungComponent } from './spieltagsplanung/spieltagsplanung.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginComponent } from './login/login.component';
     SchnittTableComponent,
     DashboardComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    SpieltagsplanungComponent
   ],
   imports: [
     BrowserModule,
