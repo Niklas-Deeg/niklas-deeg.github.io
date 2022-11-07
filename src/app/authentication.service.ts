@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 
 export class AuthenticationService {
 
-  endpoint: string = 'http://localhost:4000/api';
+  endpoint: string = 'https://localhost:7261';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
   constructor(private http: HttpClient, public router: Router) { }
@@ -27,14 +27,15 @@ export class AuthenticationService {
   // Sign-in
   signIn(user: User) {
     return this.http
-      .post<any>(`${this.endpoint}/signin`, user)
-      .subscribe((res: any) => {
-        localStorage.setItem('access_token', res.token);
-        this.getUserProfile(res._id).subscribe((res) => {
-          this.currentUser = res;
-          this.router.navigate(['user-profile/' + res.msg._id]);
-        });
-      });
+      .post<any>(`${this.endpoint}/Token`, user);
+      //.subscribe((res: any) => {
+      //  console.log(res.text());
+      //  //localStorage.setItem('access_token', res.body());
+      //  //this.getUserProfile(res._id).subscribe((res) => {
+      //  //  this.currentUser = res;
+      //  //  this.router.navigate(['user-profile/' + res.msg._id]);
+      //  //});
+      //});
   }
   getToken() {
     return localStorage.getItem('access_token');

@@ -9,11 +9,11 @@ import { User } from '../user.model';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit  {
+export class LoginComponent implements OnInit {
 
-  loginForm= new FormGroup({
+  loginForm = new FormGroup({
     username: new FormControl('', Validators.required),
-    password: new FormControl(['', Validators.required, Validators.minLength(5)])
+    password: new FormControl('', Validators.required)
   });
   user: User = new User;
   public loginInvalid: boolean = false;
@@ -22,15 +22,28 @@ export class LoginComponent implements OnInit  {
     private authenticationService: AuthenticationService,
     private router: Router) { }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { }
 
   loginUser() {
+    if (this.loginForm.invalid) {
+      return;
+    }
+
     const val = this.loginForm.value;
     this.user.username = val.username!;
-    this.user.password = val.password!.toString();
+    this.user.password = val.password!;
 
+    this.authenticationService.signIn(this.user).subscribe((response => {
+      console.log(response);
+      if (response.isValid) {
+        localStorage.setItem('access_token', response.token);
+        this.router.navigate(['Dashboard'])
+      }
+      else {
+        this.loginInvalid = true;
+      }
+    }));
 
-    this.authenticationService.signIn(this.user);
-    }
+  }
 
 }
