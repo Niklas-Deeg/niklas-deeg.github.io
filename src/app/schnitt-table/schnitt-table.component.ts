@@ -31,11 +31,13 @@ export class SchnittTableComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  showSpinner: boolean = true;
 
   constructor(private service: SchnittService) { }
 
   ngOnInit(): void {
     this.service.getSpielerData().subscribe((response: any) => {
+      this.showSpinner = false;
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;

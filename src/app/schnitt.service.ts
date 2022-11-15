@@ -11,4 +11,8 @@ export class SchnittService {
   getSpielerData() {
     return this.http.get('https://niklasdeegapi.azurewebsites.net/SportwinnerData')
   }
+
+  getUserData() {
+    return this.http.get('https://localhost:7261/User/Users')
+  }
 }

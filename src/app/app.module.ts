@@ -20,6 +20,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 import { SchnittTableComponent } from './schnitt-table/schnitt-table.component';
@@ -56,7 +58,9 @@ import { SpieltagsplanungComponent } from './spieltagsplanung/spieltagsplanung.c
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatPaginatorModule
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,8 +6,9 @@
     "\\src\\app\\login",
     "\\src\\app\\navigation",
     "\\src\\app\\navigation\\header",
+    "\\src\\app\\schnitt-table",
     "\\src\\app\\spieltagsplanung"
   ],
-  "SelectedNode": "\\src\\app\\login\\login.component.ts",
+  "SelectedNode": "\\src\\app\\authconfig.interceptor.ts",
   "PreviewInSolutionExplorer": false
 }

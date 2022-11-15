@@ -1,13 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { User } from './user.model';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { ConfigService } from './config.service';
 import {
   HttpClient,
   HttpHeaders,
   HttpErrorResponse,
 } from '@angular/common/http';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +17,13 @@ import { Router } from '@angular/router';
 
 export class AuthenticationService {
 
-  endpoint: string = 'https://localhost:7261';
+  endpoint: string = this.configService.getApiEndpoint();
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
-  constructor(private http: HttpClient, public router: Router) { }
+  constructor(private configService: ConfigService, private http: HttpClient, public router: Router) {
+
+  }
+
   // Sign-up
   signUp(user: User): Observable<any> {
     let api = `${this.endpoint}/register-user`;
@@ -26,6 +31,7 @@ export class AuthenticationService {
   }
   // Sign-in
   signIn(user: User) {
+    console.log('endpoint: ' + this.endpoint);
     return this.http
       .post<any>(`${this.endpoint}/Token`, user);
       //.subscribe((res: any) => {
@@ -40,12 +46,39 @@ export class AuthenticationService {
   getToken() {
     return localStorage.getItem('access_token');
   }
-  get isLoggedIn(): boolean {
-    let authToken = localStorage.getItem('access_token');
-    return authToken !== null ? true : false;
+
+  getExpDate() {
+    let expDate = localStorage.getItem('expDate');
+    if (expDate !== null) {
+      return JSON.parse(expDate).timestamp as moment.Moment;
+    }
+    return 0;
   }
+
+  get isLoggedIn(): boolean {
+    let authToken = this.getToken();
+    let expDate = this.getExpDate();
+    let nowDate = moment(moment.now());
+    var object = { value: "value", timestamp: nowDate };
+    var jString = JSON.stringify(object);
+    nowDate = JSON.parse(jString).timestamp as moment.Moment;
+    console.log('expDate: ' + expDate);
+    console.log('nowDate: ' + nowDate);
+    if (expDate > nowDate) {
+      //expDate ok
+      console.log('Token: ' + authToken);
+      return authToken !== null ? true : false;
+    }
+    else {
+      console.log('Token expired');
+      this.doLogout();
+      return false;
+    }   
+  }
+
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
+    let expDate = localStorage.removeItem('expDate');
     if (removeToken == null) {
       this.router.navigate(['login']);
     }

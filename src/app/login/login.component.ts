@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { User } from '../user.model';
+import * as moment from 'moment'
 
 @Component({
   selector: 'app-login',
@@ -37,6 +38,8 @@ export class LoginComponent implements OnInit {
       console.log(response);
       if (response.isValid) {
         localStorage.setItem('access_token', response.token);
+        var object = { value: "value", timestamp: moment(moment.now()).add(30, 'm') }
+        localStorage.setItem("expDate", JSON.stringify(object));
         this.router.navigate(['Dashboard'])
       }
       else {
