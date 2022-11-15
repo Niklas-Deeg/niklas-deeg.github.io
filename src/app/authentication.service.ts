@@ -32,6 +32,7 @@ export class AuthenticationService {
   // Sign-in
   signIn(user: User) {
     console.log('endpoint: ' + this.endpoint);
+    console.log('is Prod: ' + this.configService.getEnviroment());
     return this.http
       .post<any>(`${this.endpoint}/Token`, user);
       //.subscribe((res: any) => {
