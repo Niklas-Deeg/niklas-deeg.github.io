@@ -11,9 +11,4 @@ export class ConfigService {
   getApiEndpoint() {
     return environment.apiEndpoint;
   }
-
-  getEnviroment() {
-    return environment.production;
-  }
-
 }
