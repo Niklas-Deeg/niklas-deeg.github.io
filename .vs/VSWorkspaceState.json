@@ -1,14 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\docs",
     "\\src",
     "\\src\\app",
     "\\src\\app\\login",
-    "\\src\\app\\navigation",
-    "\\src\\app\\navigation\\header",
-    "\\src\\app\\schnitt-table",
-    "\\src\\app\\spieltagsplanung"
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\authconfig.interceptor.ts",
+  "SelectedNode": "\\src\\environments\\environment.prod.ts",
   "PreviewInSolutionExplorer": false
 }

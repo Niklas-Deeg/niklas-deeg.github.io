@@ -26,7 +26,7 @@ export interface Spieler {
   //, AfterViewInit
 export class SchnittTableComponent implements OnInit {
 
-  displayedColumns = ['name', 'club', 'hschnitt', 'hspiele', 'aschnitt', 'aspiele', 'gschnitt', 'gspiele', 'bestleistung']; // 'gesammtMp', 'heimMp', 'auswaertsMp',
+  displayedColumns = ['index', 'name', 'club', 'hschnitt', 'hspiele', 'aschnitt', 'aspiele', 'gschnitt', 'gspiele', 'bestleistung']; // 'gesammtMp', 'heimMp', 'auswaertsMp',
   dataSource!: MatTableDataSource<Spieler>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
